@@ -4,14 +4,15 @@ import 'package:two_dit/constants/colors.dart';
 class AppInfoCard extends StatelessWidget {
   final String number;
   final String text;
-  AppInfoCard({Key? key, required this.number, required this.text}) : super(key: key);
+  final int index;
+  AppInfoCard({Key? key, required this.number, required this.text, required this.index}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
       width: 205,
       height: 220,
-      margin: const EdgeInsets.only(right: 20),
+      margin: (index != 0) ? EdgeInsets.only(right: 20) : EdgeInsets.only(right: 20, left: 16),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(25),
         color: Colors.white

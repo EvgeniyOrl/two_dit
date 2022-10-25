@@ -148,31 +148,38 @@ class HomePage extends StatelessWidget {
                   SizedBox(height: 60,),
                   //List
                   Container(
-                    padding: const EdgeInsets.only(top: 30, bottom: 30, left: 16),
+                    padding: const EdgeInsets.only(top: 30, bottom: 30,),
                     decoration: BoxDecoration(
                       color: AppColors.primaryColor
                     ),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text("Header 5", style: TextStyle(color: AppColors.textColor2, fontSize: 26, fontWeight: FontWeight.w500),),
+                        Padding(
+                          padding: const EdgeInsets.only(left: 16),
+                          child: Text("Header 5", style: TextStyle(color: AppColors.textColor2, fontSize: 26, fontWeight: FontWeight.w500),),
+                        ),
                         Container(
                           height: 260,
+                          width: double.maxFinite,
                           padding: const EdgeInsets.symmetric(vertical: 20),
                           child: ListView.builder(
                               itemCount: 4,
                               scrollDirection: Axis.horizontal,
                               itemBuilder: (BuildContext context, int index) {
-                                return AppInfoCard(number: infoCardNumbers[index], text: infoCardTexts[index]);
+                                return AppInfoCard(number: infoCardNumbers[index], text: infoCardTexts[index], index: index);
                               }
                           ),
                         ),
-                        Row(
-                          children: [
-                            Text("Read more", style: TextStyle(color: AppColors.mainColor, fontSize: 16, fontWeight: FontWeight.w700),),
-                            SizedBox(width: 10,),
-                            Icon(Icons.keyboard_arrow_right, color: AppColors.mainColor, size: 20,)
-                          ],
+                        Padding(
+                          padding: const EdgeInsets.only(left: 16),
+                          child: Row(
+                            children: [
+                              Text("Read more", style: TextStyle(color: AppColors.mainColor, fontSize: 16, fontWeight: FontWeight.w700),),
+                              SizedBox(width: 10,),
+                              Icon(Icons.keyboard_arrow_right, color: AppColors.mainColor, size: 20,)
+                            ],
+                          ),
                         )
                       ],
                     ),
